@@ -8,7 +8,7 @@
 
 // ======== GRAPHICS ========
 
-#include "tigr/tigr.h"
+#include "third_party/tigr/tigr.h"
 
 static const int window_size = 240;
 static const int circle_x = window_size / 2;

@@ -1,13 +1,13 @@
 PREVIEW_DIR="$( dirname -- "${BASH_SOURCE[0]}" )"
 PREVIEW_DIR="$( realpath -e -- "$PREVIEW_DIR" )"
 
-LUADIR="$PREVIEW_DIR/lua-5.5.1"
-GLWLIBDIR="$PREVIEW_DIR/previewlib"
+LUA_BINDIR="$PREVIEW_DIR/lua-5.5.1/install/bin"
+PREVIEWLIB_BINDIR="$PREVIEW_DIR/build"
 
 echo "Building preview tool..."
-bash $PREVIEW_DIR/build.sh
+make -C "$PREVIEW_DIR" all
 
-export PATH="$LUADIR/install/bin:$PATH"
-export LUA_CPATH="$LUA_CPATH;$GLWLIBDIR/build/?.so"
+export PATH="$LUADIR:$PATH"
+export LUA_CPATH="$LUA_CPATH;$PREVIEWLIB_BINDIR/?.so"
 
 echo "Use \"lua -lpreviewlib\" to launch the lua interpreter with the preview library"

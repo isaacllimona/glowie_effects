@@ -1,2 +1,9 @@
+# build files
 install
 build
+*.o
+*.a
+
+# lua build files
+lua
+luac
