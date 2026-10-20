@@ -7,3 +7,7 @@ build
 # lua build files
 lua
 luac
+
+# python
+.venv
+__pycache__
